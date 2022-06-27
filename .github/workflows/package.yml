@@ -14,4 +14,4 @@ jobs:
         with:
           github-token: ${{ github.token }}
           image-name: exercise
-          build-context: ../../sample-packages/docker/Dockerfile
+          build-context: ../../sample-packages/docker
