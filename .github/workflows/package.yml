@@ -7,10 +7,10 @@ jobs:
     name: build image
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2.4.2
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v3.0.0
+      - name: Docker Build Tag Publish
+        uses: bitovi/github-actions-docker-publish@v1.0.2
         with:
-          file: ../../sample-packages/docker/Dockerfile
-          github-token: ${{ github.token }}
+          checkout: true
+          registry: ghcr.io
+          docker_username: lbourgogn
+          docker_password: ${{ github.token }}
