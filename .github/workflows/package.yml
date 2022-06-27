@@ -1,0 +1,15 @@
+name: Build and Publish Docker Image
+
+on: push
+
+jobs:
+  build:
+    name: build image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: checkout@v2
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v3.0.0
+        with:
+          file: ../../sample-packages/docker/
+          github-token: ${{ github.token }}
