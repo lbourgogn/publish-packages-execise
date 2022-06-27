@@ -1,0 +1,5 @@
+name: Build and Publish Docker Image
+
+jobs:
+  - build
+  - publish
