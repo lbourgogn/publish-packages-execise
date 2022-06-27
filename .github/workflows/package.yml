@@ -9,9 +9,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.4.2
-      - name: Build and publish Docker Image to new GitHub Packages Registry
-        uses: DrSkunk/gp-docker-action@1.1.9
-        with:
-          github-token: ${{ github.token }}
-          image-name: exercise
-          build-context: ../../sample-packages/docker
+      - name: push-to-ghcr
+        uses: macbre/push-to-ghcr@v8
+          with:
+            github_token: ${{ github.token }}
+            image_name: lbourgogne/publlish-packages-exercise
+            dockerfile: ../../sample-packages/docker/Dockerfile
+            # optional, default is ./Dockerfile
