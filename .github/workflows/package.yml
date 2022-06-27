@@ -12,7 +12,7 @@ jobs:
       - name: push-to-ghcr
         uses: macbre/push-to-ghcr@v8
         with:
-          github_token: ${{ github.token }}
-          image_name: lbourgogne/publlish-packages-exercise
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          image_name: lbourgogne/publish-packages-exercise
           dockerfile: sample-packages/docker/Dockerfile
           # optional, default is ./Dockerfile
