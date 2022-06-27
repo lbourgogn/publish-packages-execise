@@ -7,10 +7,9 @@ jobs:
     name: build image
     runs-on: ubuntu-latest
     steps:
-      - name: Docker Build Tag Publish
-        uses: bitovi/github-actions-docker-publish@v1.0.2
+      - name: Build and publish Docker Image to new GitHub Packages Registry
+        uses: DrSkunk/gp-docker-action@1.1.9
         with:
-          checkout: true
-          registry: ghcr.io
-          docker_username: lbourgogn
-          docker_password: ${{ github.token }}
+          github-token: ${{ github.token }}
+          image-name: exercise
+          build-context: ../../sample-packages/docker/Dockerfile
